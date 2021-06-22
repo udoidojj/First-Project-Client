@@ -1,16 +1,9 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import SingleLightbox from '../pages/SingleLightbox';
-import IntlMessages from '../../helpers/IntlMessages';
 
 const UserFollow = ({ data }) => {
   return (
     <div className="d-flex flex-row mb-3 pb-3 border-bottom justify-content-between align-items-center">
-      <SingleLightbox
-        thumb={data.thumb}
-        large={data.large}
-        className="img-thumbnail border-0 rounded-circle list-thumbnail align-self-center xsmall"
-      />
       <div className="pl-3 flex-fill">
         <NavLink to="#" location={{}}>
           <p className="font-weight-medium mb-0">{data.name}</p>
@@ -23,7 +16,6 @@ const UserFollow = ({ data }) => {
           to="#"
           location={{}}
         >
-          <IntlMessages id="pages.follow" />
         </NavLink>
       </div>
     </div>

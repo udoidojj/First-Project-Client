@@ -1,4 +1,3 @@
-/* eslint-disable import/no-cycle */
 
 /* MENU */
 export const MENU_SET_CLASSNAMES = 'MENU_SET_CLASSNAMES';

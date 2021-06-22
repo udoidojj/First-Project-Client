@@ -1,13 +1,11 @@
-/* eslint-disable react/no-array-index-key */
 import React from 'react';
 import { Breadcrumb, BreadcrumbItem } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
-import IntlMessages from '../../helpers/IntlMessages';
 import { adminRoot } from '../../constants/defaultValues';
 
 const getMenuTitle = (sub) => {
-  if (`/${sub}` === adminRoot) return <IntlMessages id="menu.home" />;
-  return <IntlMessages id={`menu.${sub}`} />;
+  //if (`/${sub}` === adminRoot) return <>홈</>;
+  return <>{`menu.${sub}`}</>;
 };
 
 const getUrl = (path, sub) => {
@@ -19,7 +17,7 @@ const BreadcrumbContainer = ({ heading, match }) => {
     <>
       {heading && (
         <h1>
-          <IntlMessages id={heading} />
+          {heading}
         </h1>
       )}
       <BreadcrumbItems match={match} />
