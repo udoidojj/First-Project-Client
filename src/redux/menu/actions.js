@@ -1,5 +1,3 @@
-/* eslint-disable import/no-cycle */
-/* eslint-disable no-param-reassign */
 import {
   MENU_SET_CLASSNAMES,
   MENU_CONTAINER_ADD_CLASSNAME,

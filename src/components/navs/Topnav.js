@@ -1,8 +1,4 @@
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-/* eslint-disable no-use-before-define */
 import React, { useState } from 'react';
-import { injectIntl } from 'react-intl';
 
 import {
   UncontrolledDropdown,
@@ -27,7 +23,6 @@ import { MobileMenuIcon, MenuIcon } from './memuIcon';
 import TopnavNotifications from './Topnav.Notifications';
 
 const TopNav = ({
-  intl,
   history,
   containerClassnames,
   menuClickCount,
@@ -135,7 +130,6 @@ const TopNav = ({
     clickOnMobileMenuAction(_containerClassnames);
   };
 
-  const { messages } = intl;
   return (
     <nav className="navbar fixed-top">
       <div className="d-flex align-items-center navbar-left">
@@ -162,7 +156,6 @@ const TopNav = ({
           <Input
             name="searchKeyword"
             id="searchKeyword"
-            placeholder={messages['menu.search']}
             value={searchKeyword}
             onChange={(e) => setSearchKeyword(e.target.value)}
             onKeyPress={(e) => handleSearchInputKeyPress(e)}
@@ -217,9 +210,7 @@ const mapStateToProps = ({ menu }) => {
     selectedMenuHasSubItems,
   };
 };
-export default injectIntl(
-  connect(mapStateToProps, {
+export default connect(mapStateToProps, {
     setContainerClassnamesAction: setContainerClassnames,
     clickOnMobileMenuAction: clickOnMobileMenu,
-  })(TopNav)
-);
+  })(TopNav);

@@ -1,16 +1,15 @@
-/* eslint-disable global-require */
 import './assets/css/vendor/bootstrap.min.css';
 import './assets/css/vendor/bootstrap.rtl.only.min.css';
-import 'react-circular-progressbar/dist/styles.css';
 import 'react-perfect-scrollbar/dist/css/styles.css';
-import 'react-big-calendar/lib/css/react-big-calendar.css';
-import 'react-image-lightbox/style.css';
-import 'video.js/dist/video-js.css';
 import './serviceWorker';
 import './assets/css/sass/themes/gogo.light.purplemonster.scss';
+// @ts-ignore
 import * as React from 'react';
+// @ts-ignore
 import { Suspense } from 'react';
+// @ts-ignore
 import ReactDOM from 'react-dom';
+// @ts-ignore
 import { Provider } from 'react-redux';
 import { configureStore } from './redux/store';
 import reportWebVitals from './reportWebVitals';
@@ -27,6 +26,7 @@ const Main = () => {
   );
 };
 
+// @ts-ignore
 ReactDOM.render(<Main />, document.getElementById('root'));
 
 // If you want to start measuring performance in your app, pass a function

@@ -1,4 +1,3 @@
-/* eslint-disable react/no-array-index-key */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ReactDOM from 'react-dom';
@@ -6,8 +5,6 @@ import { Nav, NavItem, Collapse } from 'reactstrap';
 import { NavLink, withRouter } from 'react-router-dom';
 import classnames from 'classnames';
 import PerfectScrollbar from 'react-perfect-scrollbar';
-
-import IntlMessages from '../../helpers/IntlMessages';
 
 import {
   setContainerClassnames,
@@ -28,18 +25,15 @@ class Sidebar extends Component {
     };
   }
 
-  // eslint-disable-next-line react/sort-comp
   handleWindowResize = (event) => {
     if (event && !event.isTrusted) {
       return;
     }
     const { containerClassnames } = this.props;
     const nextClasses = this.getMenuClassesForResize(containerClassnames);
-    // eslint-disable-next-line react/destructuring-assignment
     this.props.setContainerClassnames(
       0,
       nextClasses.join(' '),
-      // eslint-disable-next-line react/destructuring-assignment
       this.props.selectedMenuHasSubItems
     );
   };
@@ -108,7 +102,6 @@ class Sidebar extends Component {
   };
 
   getContainer = () => {
-    // eslint-disable-next-line react/no-find-dom-node
     return ReactDOM.findDOMNode(this);
   };
 
@@ -383,7 +376,6 @@ class Sidebar extends Component {
                             target="_blank"
                           >
                             <i className={item.icon} />{' '}
-                            <IntlMessages id={item.label} />
                           </a>
                         ) : (
                           <NavLink
@@ -392,7 +384,6 @@ class Sidebar extends Component {
                             data-flag={item.id}
                           >
                             <i className={item.icon} />{' '}
-                            <IntlMessages id={item.label} />
                           </NavLink>
                         )}
                       </NavItem>
@@ -443,7 +434,6 @@ class Sidebar extends Component {
                                   target="_blank"
                                 >
                                   <i className={sub.icon} />{' '}
-                                  <IntlMessages id={sub.label} />
                                 </a>
                               ) : sub.subs && sub.subs.length > 0 ? (
                                 <>
@@ -465,7 +455,6 @@ class Sidebar extends Component {
                                     }
                                   >
                                     <i className="simple-icon-arrow-down" />{' '}
-                                    <IntlMessages id={sub.label} />
                                   </NavLink>
 
                                   <Collapse
@@ -491,18 +480,12 @@ class Sidebar extends Component {
                                                   <i
                                                     className={thirdSub.icon}
                                                   />{' '}
-                                                  <IntlMessages
-                                                    id={thirdSub.label}
-                                                  />
                                                 </a>
                                               ) : (
                                                 <NavLink to={thirdSub.to}>
                                                   <i
                                                     className={thirdSub.icon}
                                                   />{' '}
-                                                  <IntlMessages
-                                                    id={thirdSub.label}
-                                                  />
                                                 </NavLink>
                                               )}
                                             </NavItem>
@@ -515,7 +498,6 @@ class Sidebar extends Component {
                               ) : (
                                 <NavLink to={sub.to}>
                                   <i className={sub.icon} />{' '}
-                                  <IntlMessages id={sub.label} />
                                 </NavLink>
                               )}
                             </NavItem>

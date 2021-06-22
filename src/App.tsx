@@ -1,22 +1,19 @@
 import * as React from 'react';
 import { Suspense } from 'react';
+// @ts-ignore
 import { connect } from 'react-redux';
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Redirect,
-} from 'react-router-dom';
+// @ts-ignore
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import { NotificationContainer } from './components/common/react-notifications';
 import { adminRoot } from './constants/defaultValues';
 
-const ViewHome = React.lazy(() => import('./views/login'));
+const ViewHome = React.lazy(() => import('./views/Login'));
 const ViewApp = React.lazy(() => import('./views/app'));
 const ViewError = React.lazy(() => import('./views/error'));
 
 const App = () => {
   return (
-    <div className="h-100 rounded">
+    <div className="h-100">
       <NotificationContainer />
       <Suspense fallback={<div className="loading" />}>
         <Router>
@@ -47,7 +44,4 @@ const App = () => {
   );
 };
 
-const mapStateToProps = () => {};
-const mapActionsToProps = {};
-
-export default connect(mapStateToProps, mapActionsToProps)(App);
+export default App;

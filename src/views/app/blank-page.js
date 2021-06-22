@@ -1,6 +1,5 @@
 import React from 'react';
 import { Row } from 'reactstrap';
-import IntlMessages from '../../helpers/IntlMessages';
 import { Colxx, Separator } from '../../components/common/CustomBootstrap';
 import Breadcrumb from '../../components/navs/Breadcrumb';
 
@@ -16,7 +15,6 @@ const BlankPage = ({ match }) => {
       <Row>
         <Colxx xxs="12" className="mb-4">
           <p>
-            <IntlMessages id="menu.blank-page" />
           </p>
         </Colxx>
       </Row>
