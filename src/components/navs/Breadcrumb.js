@@ -3,6 +3,11 @@ import { Breadcrumb, BreadcrumbItem } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 import { adminRoot } from '../../constants/defaultValues';
 
+const getMenuTitle = (sub) => {
+  //if (`/${sub}` === adminRoot) return <>홈</>;
+  return <>{`menu.${sub}`}</>;
+};
+
 const getUrl = (path, sub) => {
   return path.split(sub)[0] + sub;
 };
@@ -12,7 +17,7 @@ const BreadcrumbContainer = ({ heading, match }) => {
     <>
       {heading && (
         <h1>
-          제목!!!
+          {heading}
         </h1>
       )}
       <BreadcrumbItems match={match} />
@@ -34,10 +39,10 @@ const BreadcrumbItems = ({ match }) => {
             <BreadcrumbItem key={index} active={paths.length === index + 1}>
               {paths.length !== index + 1 ? (
                 <NavLink to={`/${getUrl(path, sub, index)}`}>
-                  {'메뉴 타이틀'}
+                  {getMenuTitle(sub)}
                 </NavLink>
               ) : (
-                <>{'메뉴 타이틀'}</>
+                getMenuTitle(sub)
               )}
             </BreadcrumbItem>
           );
