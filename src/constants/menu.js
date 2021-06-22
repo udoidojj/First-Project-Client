@@ -5,13 +5,13 @@ const data = [
   {
     id: 'gogo',
     icon: 'iconsminds-air-balloon-1',
-    label: 'menu.gogo',
+    label: '메뉴1',
     to: `${adminRoot}/gogo`,
     // roles: [UserRole.Admin, UserRole.Editor],
     subs: [
       {
         icon: 'simple-icon-paper-plane',
-        label: 'menu.start',
+        label: '메뉴1의 1',
         to: `${adminRoot}/gogo/start`,
       },
     ],
@@ -19,12 +19,12 @@ const data = [
   {
     id: 'secondmenu',
     icon: 'iconsminds-three-arrow-fork',
-    label: 'menu.second-menu',
+    label: '메뉴2',
     to: `${adminRoot}/second-menu`,
     subs: [
       {
         icon: 'simple-icon-paper-plane',
-        label: 'menu.second',
+        label: '메뉴 2의 1',
         to: `${adminRoot}/second-menu/second`,
       },
     ],
@@ -32,7 +32,7 @@ const data = [
   {
     id: 'blankpage',
     icon: 'iconsminds-bucket',
-    label: 'menu.blank-page',
+    label: '메뉴3',
     to: `${adminRoot}/blank-page`,
   },
 ];

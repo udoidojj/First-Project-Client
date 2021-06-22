@@ -384,6 +384,7 @@ class Sidebar extends Component {
                             data-flag={item.id}
                           >
                             <i className={item.icon} />{' '}
+                            {item.label}
                           </NavLink>
                         )}
                       </NavItem>
@@ -434,6 +435,7 @@ class Sidebar extends Component {
                                   target="_blank"
                                 >
                                   <i className={sub.icon} />{' '}
+                                  {sub.label}
                                 </a>
                               ) : sub.subs && sub.subs.length > 0 ? (
                                 <>
@@ -455,6 +457,7 @@ class Sidebar extends Component {
                                     }
                                   >
                                     <i className="simple-icon-arrow-down" />{' '}
+                                    {sub.label}
                                   </NavLink>
 
                                   <Collapse
@@ -480,12 +483,14 @@ class Sidebar extends Component {
                                                   <i
                                                     className={thirdSub.icon}
                                                   />{' '}
+                                                  {thirdSub.label}
                                                 </a>
                                               ) : (
                                                 <NavLink to={thirdSub.to}>
                                                   <i
                                                     className={thirdSub.icon}
                                                   />{' '}
+                                                  {thirdSub.label}
                                                 </NavLink>
                                               )}
                                             </NavItem>
@@ -498,6 +503,7 @@ class Sidebar extends Component {
                               ) : (
                                 <NavLink to={sub.to}>
                                   <i className={sub.icon} />{' '}
+                                  {sub.label}
                                 </NavLink>
                               )}
                             </NavItem>
